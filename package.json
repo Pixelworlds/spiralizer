@@ -1,7 +1,19 @@
 {
   "name": "spiralizer",
+  "main": "index.js",
   "version": "0.1.0",
   "private": true,
+  "author": "Richard Stovall <rstovall@me.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint:fix": "eslint ./src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
+    "lint:format": "prettier  --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
+    "lint": "npm run lint:format && npm run lint:fix "
+  },
   "dependencies": {
     "@chakra-ui/react": "^2.2.1",
     "@emotion/react": "^11.0.0",
@@ -12,15 +24,18 @@
     "framer-motion": "^6.2.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^3.0.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^0.2.2"
+    "react-icons": "^4.4.0",
+    "react-scripts": "5.0.1"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.5.3",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "jest": "^28.1.2",
+    "prettier": "^2.7.1"
   },
   "eslintConfig": {
     "extends": "react-app"

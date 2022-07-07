@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "checkJs": true,
+    "resolveJsonModule": true
+  },
+  "exclude": ["node_modules", "jest", ".git", "dist"]
+}
