@@ -4,4 +4,4 @@
 yarn && yarn start
 ```
 
-The project will be available on (http://localhost:3000)[http://localhost:3000]
+The project will be available on [http://localhost:3000](http://localhost:3000)
