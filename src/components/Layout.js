@@ -5,7 +5,7 @@ import { Matrix } from 'src/components/Matrix';
 import { useApp } from 'src/providers/AppProvider';
 
 const Layout = () => {
-  const { x, setX, y, setY, flatValues, valueStr, result } = useApp();
+  const { x, setX, y, setY } = useApp();
 
   return (
     <Box textAlign="center" fontSize="xl">
@@ -15,13 +15,7 @@ const Layout = () => {
         </HStack>
         <Controls x={x} setX={setX} y={y} setY={setY} />
         <Center>
-          <Matrix
-            x={x}
-            y={y}
-            flatValues={flatValues}
-            valueStr={valueStr}
-            result={result}
-          />
+          <Matrix x={x} y={y} />
         </Center>
       </VStack>
     </Box>
