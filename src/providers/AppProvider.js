@@ -56,4 +56,4 @@ const AppProvider = ({ children }) => {
   );
 };
 
-export { AppProvider, useApp };
+export { AppContext, AppProvider, useApp };

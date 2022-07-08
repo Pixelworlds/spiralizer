@@ -8,13 +8,10 @@ import {
   NumberInputField,
   NumberInputStepper,
 } from '@chakra-ui/react';
-import { useApp } from 'src/providers/AppProvider';
 
-const Controls = () => {
-  const { x, setX, y, setY } = useApp();
-
+const Controls = ({ x, setX, y, setY }) => {
   return (
-    <HStack spacing={6}>
+    <HStack spacing={6} role="group" aria-label="controls">
       <FormControl>
         <FormLabel htmlFor="size">Array Width</FormLabel>
         <NumberInput
@@ -22,6 +19,7 @@ const Controls = () => {
           value={x}
           min={2}
           max={26}
+          aria-label="increment"
           onChange={size => {
             if (size * y <= 26) setX(size);
           }}
@@ -40,6 +38,7 @@ const Controls = () => {
           value={y}
           min={2}
           max={26}
+          aria-label="decrement"
           onChange={size => {
             if (size * x <= 26) setY(size);
           }}
