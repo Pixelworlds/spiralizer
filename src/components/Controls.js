@@ -7,9 +7,12 @@ import {
   NumberInput,
   NumberInputField,
   NumberInputStepper,
+  useToast,
 } from '@chakra-ui/react';
 
 const Controls = ({ x, setX, y, setY }) => {
+  const toast = useToast();
+
   return (
     <HStack spacing={6} role="group" aria-label="controls">
       <FormControl>
@@ -21,7 +24,13 @@ const Controls = ({ x, setX, y, setY }) => {
           max={26}
           aria-label="increment"
           onChange={size => {
-            if (size * y <= 26) setX(size);
+            size * y <= 26
+              ? setX(size)
+              : toast({
+                  title: 'The matrix is limited to a maximum of 26 cells',
+                  status: 'warning',
+                  isClosable: true,
+                });
           }}
         >
           <NumberInputField />
@@ -40,7 +49,13 @@ const Controls = ({ x, setX, y, setY }) => {
           max={26}
           aria-label="decrement"
           onChange={size => {
-            if (size * x <= 26) setY(size);
+            size * x <= 26
+              ? setY(size)
+              : toast({
+                  title: 'The matrix is limited to a maximum of 26 cells',
+                  status: 'warning',
+                  isClosable: true,
+                });
           }}
         >
           <NumberInputField />
